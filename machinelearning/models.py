@@ -183,7 +183,7 @@ class DigitClassificationModel(object):
         """
         "*** YOUR CODE HERE ***"
         batch_size, lr = 100, 0.5
-        for epoch in range(20):                             # up to 20 epochs
+        for epoch in range(20): # up to 20 epochs
             for x_batch, y_batch in dataset.iterate_once(batch_size):
                 loss = self.get_loss(x_batch, y_batch)
                 grads = nn.gradients(loss, [self.W1, self.b1, self.W2, self.b2])
@@ -195,7 +195,7 @@ class DigitClassificationModel(object):
 
             acc = dataset.get_validation_accuracy()
             print(f"Epoch {epoch+1:2d}  val acc = {acc:.4f}")
-            if acc >= 0.98:                               # stop once you’re safely above 97%
+            if acc >= 0.98: # stop once you’re safely above 97%
                 return
 
 class LanguageIDModel(object):
